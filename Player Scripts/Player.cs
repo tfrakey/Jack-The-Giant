@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
             anim.SetBool("Walk", true);
             temp.x = 1.3f;
-            transform.localScale = temp;
+            transform.localScale = temp; //Player faces right
         }
         else if (h< 0)
         {
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
 
             anim.SetBool("Walk", true);
             temp.x = -1.3f;
-            transform.localScale = temp;
+            transform.localScale = temp; // Player faces left
         }
         else
         {
