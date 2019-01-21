@@ -27,7 +27,9 @@ public class Player : MonoBehaviour
     // Is called every few frames
     void FixedUpdate()
     {
+#if UNITY_STANDALONE
         PlayerMoveKeyboard();
+#endif
     }
 
     void PlayerMoveKeyboard()
@@ -53,7 +55,7 @@ public class Player : MonoBehaviour
 
             anim.SetBool("Walk", true);
             temp.x = -1.3f;
-            transform.localScale = temp; // Player faces left
+            transform.localScale = temp; // Player faces left            
         }
         else
         {
