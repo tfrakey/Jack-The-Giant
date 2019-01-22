@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneFader : MonoBehaviour
 {
@@ -39,7 +40,9 @@ public class SceneFader : MonoBehaviour
     {
         fadePanel.SetActive(true);
         fadeAnim.Play("FadeIn");
-        yield return StartCoroutine(MyCoroutine.WaitForRealSeconds(1.0f));
+        yield return StartCoroutine(MyCoroutine.WaitForRealSeconds(1.0f));        
+        SceneManager.LoadScene(level);
+
         fadeAnim.Play("FadeOut");
         yield return StartCoroutine(MyCoroutine.WaitForRealSeconds(0.7f));
         fadePanel.SetActive(false);

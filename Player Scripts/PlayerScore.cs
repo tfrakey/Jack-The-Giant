@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerScore : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip coinClip, lifeClip;
+    private AudioClip coinClip, lifeClip, deathClip;
     private CameraScript cameraScript;
     private bool countScore;
     private Vector3 previousPosition;
@@ -69,11 +69,12 @@ public class PlayerScore : MonoBehaviour
 
         if(target.tag == "Bounds" || target.tag == "Deadly")
         {
+            AudioSource.PlayClipAtPoint(deathClip, transform.position);
             cameraScript.moveCamera = false;
             countScore = false;            
             lifeCount--;
-            GameManager.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);
-            transform.position = new Vector3(500, 500, 0);
+            GameManager.instance.CheckGameStatus(scoreCount, coinCount, lifeCount);            
+            transform.position = new Vector3(500, 500, 0);            
         }
     }
 }

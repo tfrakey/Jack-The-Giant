@@ -9,9 +9,9 @@ public class CameraScript : MonoBehaviour
     private float acceleration = 0.2f;
     private float maxSpeed = 3.2f;
 
-    private float easySpeed = 3.2f;
-    private float mediumSpeed = 3.7f;
-    private float hardSpeed = 4.2f;
+    private float easySpeed = 2.5f;
+    private float mediumSpeed = 3.0f;
+    private float hardSpeed = 3.8f;
 
     //Public variables
     [HideInInspector]
@@ -20,17 +20,17 @@ public class CameraScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(GamePreferences.GetEasyDifficulty() == 1)
+        if(GamePreferences.GetEasyDifficultyState() == 0)
         {
             maxSpeed = easySpeed;
         }
 
-        if (GamePreferences.GetMediumDifficulty() == 1)
+        if (GamePreferences.GetMediumDifficultyState() == 0)
         {
             maxSpeed = mediumSpeed;
         }
 
-        if (GamePreferences.GetHardDifficulty() == 1)
+        if (GamePreferences.GetHardDifficultyState() == 0)
         {
             maxSpeed = hardSpeed;
         }

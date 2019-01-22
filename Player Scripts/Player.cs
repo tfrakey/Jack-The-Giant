@@ -27,9 +27,7 @@ public class Player : MonoBehaviour
     // Is called every few frames
     void FixedUpdate()
     {
-#if UNITY_STANDALONE
         PlayerMoveKeyboard();
-#endif
     }
 
     void PlayerMoveKeyboard()

@@ -22,8 +22,7 @@ public class PlayerMoveJoystick : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {
-#if UNITY_ANDROID
+    { 
         if(moveLeft)
         {
             MoveLeft();
@@ -32,7 +31,6 @@ public class PlayerMoveJoystick : MonoBehaviour
         {
             MoveRight();
         }
-#endif
     }
 
     public void SetMoveLeft(bool moveLeft)

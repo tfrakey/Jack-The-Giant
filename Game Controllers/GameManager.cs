@@ -52,11 +52,11 @@ public class GameManager : MonoBehaviour
             {
                 PlayerScore.scoreCount = -1;
                 PlayerScore.coinCount = 0;
-                PlayerScore.lifeCount = 2;
+                PlayerScore.lifeCount = 3;
 
                 GameplayController.instance.SetScore(-1);
                 GameplayController.instance.SetCoinScore(0);
-                GameplayController.instance.SetLifeScore(2);
+                GameplayController.instance.SetLifeScore(3);
             }
         }
     }
@@ -65,17 +65,17 @@ public class GameManager : MonoBehaviour
     {
         if(!PlayerPrefs.HasKey("Game Initialized"))
         {
-            GamePreferences.SetEasyDifficulty(0);
+            GamePreferences.SetEasyDifficultyState(1);
             GamePreferences.SetEasyDifficultyCoinScore(0);
-            GamePreferences.SetEasyDifficultyHighScore(0);
+            GamePreferences.SetEasyDifficultyHighscore(0);
 
-            GamePreferences.SetMediumDifficulty(1);
+            GamePreferences.SetMediumDifficultyState(0);
             GamePreferences.SetMediumDifficultyCoinScore(0);
-            GamePreferences.SetMediumDifficultyHighScore(0);
+            GamePreferences.SetMediumDifficultyHighscore(0);
 
-            GamePreferences.SetHardDifficulty(0);
+            GamePreferences.SetHardDifficultyState(1);
             GamePreferences.SetHardDifficultyCoinScore(0);
-            GamePreferences.SetHardDifficultyHighScore(0);
+            GamePreferences.SetHardDifficultyHighscore(0);
 
             GamePreferences.SetMusicState(1);
 
@@ -102,42 +102,42 @@ public class GameManager : MonoBehaviour
     {
         if(lifeCount <=0 )
         {
-            if(GamePreferences.GetEasyDifficulty() == 1)
+            if(GamePreferences.GetEasyDifficultyState() == 0)
             {
-                int highScore = GamePreferences.GetEasyDifficultyHighScore();
+                int highScore = GamePreferences.GetEasyDifficultyHighscore();
                 int coinHighScore = GamePreferences.GetEasyDifficultyCoinScore();
 
                 if(highScore < score)
                 {
-                    GamePreferences.SetEasyDifficultyHighScore(score);
+                    GamePreferences.SetEasyDifficultyHighscore(score);
                 }
                 if(coinHighScore < coinCount)
                 {
                     GamePreferences.SetEasyDifficultyCoinScore(coinCount);
                 }
             }
-            if (GamePreferences.GetMediumDifficulty() == 1)
+            if (GamePreferences.GetMediumDifficultyState() == 0)
             {
-                int highScore = GamePreferences.GetMediumDifficultyHighScore();
+                int highScore = GamePreferences.GetMediumDifficultyHighscore();
                 int coinHighScore = GamePreferences.GetMediumDifficultyCoinScore();
 
                 if (highScore < score)
                 {
-                    GamePreferences.SetMediumDifficultyHighScore(score);
+                    GamePreferences.SetMediumDifficultyHighscore(score);
                 }
                 if (coinHighScore < coinCount)
                 {
                     GamePreferences.SetMediumDifficultyCoinScore(coinCount);
                 }
             }
-            if (GamePreferences.GetHardDifficulty() == 1)
+            if (GamePreferences.GetHardDifficultyState() == 0)
             {
-                int highScore = GamePreferences.GetHardDifficultyHighScore();
+                int highScore = GamePreferences.GetHardDifficultyHighscore();
                 int coinHighScore = GamePreferences.GetHardDifficultyCoinScore();
 
                 if (highScore < score)
                 {
-                    GamePreferences.SetHardDifficultyHighScore(score);
+                    GamePreferences.SetHardDifficultyHighscore(score);
                 }
                 if (coinHighScore < coinCount)
                 {

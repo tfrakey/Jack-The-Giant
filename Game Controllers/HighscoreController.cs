@@ -18,23 +18,25 @@ public class HighscoreController : MonoBehaviour
 
     void SetScore(int score, int coinScore)
     {
-        scoreText.text = score.ToString();
-        coinText.text = coinScore.ToString();
+        //scoreText.text = score.ToString();
+        //coinText.text = coinScore.ToString();   
+        scoreText.text = "" + score;
+        coinText.text = "" + coinScore;
     }
 
     void SetScoreBasedOnDifficulty()
     {
-        if(GamePreferences.GetEasyDifficulty() == 1)
+        if(GamePreferences.GetEasyDifficultyState() == 0)
         {
-            SetScore(GamePreferences.GetEasyDifficultyHighScore(), GamePreferences.GetEasyDifficultyCoinScore());
+            SetScore(GamePreferences.GetEasyDifficultyHighscore(), GamePreferences.GetEasyDifficultyCoinScore());
         }
-        if (GamePreferences.GetMediumDifficulty() == 1)
+        if (GamePreferences.GetMediumDifficultyState() == 0)
         {
-            SetScore(GamePreferences.GetMediumDifficultyHighScore(), GamePreferences.GetMediumDifficultyCoinScore());
+            SetScore(GamePreferences.GetMediumDifficultyHighscore(), GamePreferences.GetMediumDifficultyCoinScore());
         }
-        if (GamePreferences.GetHardDifficulty() == 1)
+        if (GamePreferences.GetHardDifficultyState() == 0)
         {
-            SetScore(GamePreferences.GetHardDifficultyHighScore(), GamePreferences.GetHardDifficultyCoinScore());
+            SetScore(GamePreferences.GetHardDifficultyHighscore(), GamePreferences.GetHardDifficultyCoinScore());
         }
     }
 

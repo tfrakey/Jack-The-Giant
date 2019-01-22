@@ -35,15 +35,15 @@ public class OptionsController : MonoBehaviour
 
     void SetDifficulty()
     {
-        if(GamePreferences.GetEasyDifficulty() == 1)
+        if(GamePreferences.GetEasyDifficultyState() == 0)
         {
             SetInitialDifficulty("easy");
         }
-        if (GamePreferences.GetMediumDifficulty() == 1)
+        if (GamePreferences.GetMediumDifficultyState() == 0)
         {
             SetInitialDifficulty("medium");
         }
-        if (GamePreferences.GetHardDifficulty() == 1)
+        if (GamePreferences.GetHardDifficultyState() == 0)
         {
             SetInitialDifficulty("hard");
         }
@@ -51,9 +51,9 @@ public class OptionsController : MonoBehaviour
 
     public void EasyDifficulty()
     {
-        GamePreferences.SetEasyDifficulty(1);
-        GamePreferences.SetMediumDifficulty(0);
-        GamePreferences.SetHardDifficulty(0);
+        GamePreferences.SetEasyDifficultyState(0);
+        GamePreferences.SetMediumDifficultyState(1);
+        GamePreferences.SetHardDifficultyState(1);
 
         easySign.SetActive(true);
         mediumSign.SetActive(false);
@@ -62,9 +62,9 @@ public class OptionsController : MonoBehaviour
 
     public void MediumDifficulty()
     {
-        GamePreferences.SetEasyDifficulty(0);
-        GamePreferences.SetMediumDifficulty(1);
-        GamePreferences.SetHardDifficulty(0);
+        GamePreferences.SetEasyDifficultyState(1);
+        GamePreferences.SetMediumDifficultyState(0);
+        GamePreferences.SetHardDifficultyState(1);
 
         easySign.SetActive(false);
         mediumSign.SetActive(true);
@@ -73,9 +73,9 @@ public class OptionsController : MonoBehaviour
 
     public void HardDifficultty()
     {
-        GamePreferences.SetEasyDifficulty(0);
-        GamePreferences.SetMediumDifficulty(0);
-        GamePreferences.SetHardDifficulty(1);
+        GamePreferences.SetEasyDifficultyState(1);
+        GamePreferences.SetMediumDifficultyState(1);
+        GamePreferences.SetHardDifficultyState(0);
 
         easySign.SetActive(false);
         mediumSign.SetActive(false);

@@ -33,8 +33,8 @@ public class MainMenuController : MonoBehaviour
     public void StartGame()
     {
         GameManager.instance.gameStartedFromMainMenu = true;
-        SceneManager.LoadScene("GameScene");
-        //SceneFader.instance.LoadLevel("GameScene");
+        //SceneManager.LoadScene("GameScene");
+        SceneFader.instance.LoadLevel("GameScene");
         
     }
 
